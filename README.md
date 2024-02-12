@@ -1,1 +1,1 @@
-Aktif bi database'e bağlı olmadığı için değişiklikler işlenmiyor
+aktif bir database bağlantısı yoktur değişiklikler silinir
