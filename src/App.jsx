@@ -10,13 +10,10 @@ function App() {
     const createTask = async (title, taskDesc) => {
         // console.log(title, taskDesc);
 
-        const response = await axios.post(
-            "https://my-json-server.typicode.com/Berke-aras/db/tasks",
-            {
-                titleVal: title,
-                taskDescVal: taskDesc,
-            }
-        );
+        const response = await axios.post("http://localhost:3000/tasks", {
+            titleVal: title,
+            taskDescVal: taskDesc,
+        });
 
         // console.log(response);
 
@@ -26,9 +23,7 @@ function App() {
     };
 
     const fetchTask = async () => {
-        const response = await axios.get(
-            "https://my-json-server.typicode.com/Berke-aras/db/tasks"
-        );
+        const response = await axios.get("http://localhost:3000/tasks");
         setTasks(response.data);
     };
 
@@ -38,9 +33,7 @@ function App() {
 
     const DeleteTaskByID = async (id) => {
         // console.log(id);
-        await axios.delete(
-            `https://my-json-server.typicode.com/Berke-aras/db/tasks/${id}`
-        );
+        await axios.delete(`http://localhost:3000/tasks/${id}`);
 
         const afterDelTasks = tasks.filter((task) => {
             return task.id !== id;
@@ -49,13 +42,10 @@ function App() {
     };
 
     const editTaskById = async (id, updatedTitle, updatedTitleDesc) => {
-        await axios.put(
-            `https://my-json-server.typicode.com/Berke-aras/db/tasks/${id}`,
-            {
-                itleVal: updatedTitle,
-                taskDescVal: updatedTitleDesc,
-            }
-        );
+        await axios.put(`http://localhost:3000/tasks/${id}`, {
+            itleVal: updatedTitle,
+            taskDescVal: updatedTitleDesc,
+        });
 
         const uptadetTasks = tasks.map((task) => {
             if (task.id === id) {
