@@ -1,0 +1,42 @@
+.taskContainer {
+    width: 450px;
+}
+
+.taskForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.taskForm label {
+    margin: 10px 0;
+}
+
+.taskForm input,
+.taskForm textarea {
+    padding: 10px;
+
+    border: 1px solid slategray;
+    border-radius: 10px;
+}
+
+.taskForm button {
+    margin: 10px 0;
+    padding: 10px;
+
+    border: 1px solid slateblue;
+    border-radius: 10px;
+    background-color: slateblue;
+    color: whitesmoke;
+
+    font-size: 1.1rem;
+}
+
+/* updt */
+
+.taskUpdtContainer {
+    width: 200px;
+}
+
+.taskForm .updtBtn {
+    background-color: green;
+}
